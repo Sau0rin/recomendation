@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My very first page</title>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap&subset=cyrillic" rel="stylesheet">
+
+    <!-- подключаем сценарии -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <!-- Основная часть документа -->
+  <body>
+    <!-- заголовок страницы -->
+    <header>
+      <!-- меню страницы -->
+      <nav>
+        <img src="img/fort-icon.png" alt="Логотип сайта">
+        <ul>
+          <li><a href="#main" class="menu-element" data-link="main" title="На главную">Главная</a></li>
+          <li><a href="#input" class="menu-element" data-link="input" title="Вводные данные">Вводные данные</a></li>
+          <li><a href="#output" class="menu-element" data-link="output" title="Выходные данные">Выходные данные</a></li>
+        </ul>
+        <div id="hamburger" class="icon">
+          &#9776;
+        </div>
+      </nav>
+    </header>
+    <!-- основной контент сайта -->
+    <main>
+      <section id="main">
+      </section>
+      <section class="contact" id="input">
+        <h2 class="main-title">Вводные данные</h2>
+        <div class="delimiter"></div>
+        <p class="main-title-description">Отправляем данные на сервер</p>
+        <form id="exampleForm" method="post" action="" class="contact-form">
+    			<input id="id_tovara" name="name" type="text" class="col" placeholder="Ваше имя *" required>
+          <p id = "first"></p>
+          <p id ="img_ferst"></p>
+          <p id = "ff"></p>
+          <p id = "image"></p>
+          <span id="status" class="row-col check"></span>
+    			<input type="submit" id="submit" class="submit btn" value="Отправить сообщение">
+        </form>
+      </section>
+
+      <section class="contact" id="output">
+        <h2 class="main-title">Выходные данные</h2>
+        <div class="delimiter"></div>
+        <p class="main-title-description">Получаем данные с сервера</p>
+
+        <!-- Контейнер для отображения -->
+        <div id="result" class="testimonials-container">
+          <p id = "vt"></p>
+          <ul id = "dd"></ul>
+        </div>
+      </section>
+
+    </main>
+    <!-- подвал страницы -->
+   
+  </body>
+</html>
