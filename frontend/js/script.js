@@ -49,11 +49,12 @@ function call (e) {
 function showResult(data) {
 	const dataJSON = JSON.parse(data);
  
-  $('#vt').html('Выбраный товар '+'<a href = '+dataJSON.first+'><img src='+dataJSON.img_ferst+'></a>')
- 
-  for (var f in dataJSON.ff)
+  $('.main-title-description').html('Найдено совпадений: '+dataJSON.similar_link.length)
+  $('#selected_product').html('Выбраный товар '+'<a href = '+dataJSON.first+'  target="_blank"><img src='+dataJSON.img_ferst+'></a>')
+
+  for (var f in dataJSON.similar_link)
   {
-    document.getElementById("dd").innerHTML+= '<a href = '+dataJSON.ff[f]+'><img src='+dataJSON.image[f]+'></a>'
+    document.getElementById("similar_product").innerHTML+= '<a href = '+dataJSON.similar_link[f]+'  target="_blank"><img src='+dataJSON.image[f]+'></a>'
   }
 
 

@@ -6,10 +6,18 @@
 body {
   font-family: "OpenSans-Light", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  background:#000000;
+  background:#222121;
 }
+
+form input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 header {
-  background: #2d2f31;
+  background: #ffffff;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -23,10 +31,11 @@ footer nav {
   padding: 0 30px;
 }
 header nav img {
-  width: 35px;
-  padding: 15px 0;
+  width: 220px;
+  padding: 10px 0;
+  margin: auto;
 }
-header ul,
+
 footer ul {
   font-family: "Roboto", "OpenSans-Light", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -34,6 +43,10 @@ footer ul {
   justify-content: flex-end;
   align-items: center;
   flex: 1;
+}
+
+.result p,a,ul{
+  margin: 50px auto;
 }
 
 img {
@@ -45,14 +58,18 @@ p{
 color:#ffffff
 }
 
-header li,
 footer li {
   display: inline-block;
   padding: 15px 25px;
   color: #ffffff;
 }
 
-header nav a,
+header nav a
+{
+  width: 220px;
+  padding: 10px 0;
+  margin: auto;
+}
 footer nav a {
   color: #ffffff;
   text-decoration: none;
@@ -211,7 +228,7 @@ footer nav a:hover {
   color: #fff;
 }
 .contact {
-  padding: 50px 0;
+  padding: 10px 0;
 }
 .contact-form {
   max-width: 960px;
@@ -241,6 +258,11 @@ footer nav a:hover {
   color: #616161;
   text-align: center;
 }
+
+.contact .main-title,.main-title-description{
+  color: white;
+}
+
 .contact-form .check a {
   color: #ce416e;
 }
@@ -268,8 +290,8 @@ footer nav a:hover {
 }
 .testimonials-container {
   max-width: 960px;
-  margin: 60px auto;
-  overflow: hidden;
+  margin: auto;
+  
 }
 .testimonials-inner {
   display: flex;
