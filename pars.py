@@ -70,6 +70,10 @@ def parse_inner_cards(prod_link, html):
         except:
             image_link = '-'
         try:
+            artikul = item.find('div', class_='us-product-info').find('li', class_='us-product-info-item us-product-info-item-sku').find('span' , class_='us-product-info-code').get_text()
+        except:
+            artikul = '-'
+        try:
             price = item.find('div', class_='us-product-right').find('div', class_='us-price-actual').get_text()
         except:
             try:
@@ -98,6 +102,7 @@ def parse_inner_cards(prod_link, html):
             string = '-'
 
         cards = [{
+            'artikul': artikul,
             'prod_link': prod_link,
             'image_link': image_link,
             'price': price,
@@ -111,12 +116,13 @@ def parse_inner_cards(prod_link, html):
 
 class SaveSQL:
     def __init__(self):
-        self.conn = sqlite3.connect('myDatabase.db')
+        self.conn = sqlite3.connect('myDatabase11.db')
         self.cursor = self.conn.cursor()
 
         self.cursor.execute("""
             CREATE TABLE IF NOT EXISTS Cards
-            (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+            (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            artikul integer,
             prod_link text, 
             image_link text,
             price integer, 
@@ -126,13 +132,14 @@ class SaveSQL:
     def SQL(self, items):
         for item in items:
             card = (
+                item['artikul'],
                 item['prod_link'],
                 item['image_link'],
                 item['price'],
                 item['property']
             )
 
-            self.cursor.execute('INSERT INTO Cards VALUES(NULL, ?, ?, ?, ?)', card)
+            self.cursor.execute('INSERT INTO Cards VALUES(NULL,?, ?, ?, ?, ?)', card)
             self.conn.commit()
 
 

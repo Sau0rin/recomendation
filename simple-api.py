@@ -19,10 +19,10 @@ app.add_middleware(
 @app.post("/request/")
 def request(name: str = Form(...)):
 
-    con = sqlite3.connect('myDatabase.db')
+    con = sqlite3.connect('myDatabase11.db')
     cursorObj = con.cursor()
 
-    search_tovara = "SELECT prod_link FROM Cards where id = ?"
+    search_tovara = "SELECT prod_link FROM Cards where artikul = ?"
     cursorObj.execute(search_tovara, (name,))
 
     link=''
@@ -45,6 +45,8 @@ def request(name: str = Form(...)):
     search_all_img_tovarov = "SELECT image_link FROM Cards where prod_link LIKE ?"
     cursorObj.execute(search_all_img_tovarov,(link_str_split+'%',))
     image = cursorObj.fetchall()
+
+
 
     return {"username": name, "first": link_str, "img_ferst": img_ferst ,  "similar_link": similar_link, "image": image }
    
